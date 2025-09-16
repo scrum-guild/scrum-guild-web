@@ -1,10 +1,185 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="utf-8" />
-    <title>sucrum-guild web page</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scrum Guild コミュニティ</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #073B6B;
+      color: #fff;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    header, section {
+      padding: 4rem 2rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+    h1, h2, h3 {
+      color: #FF6B6B;
+    }
+    .button {
+      display: inline-block;
+      background: #FFB84D;
+      color: #073B6B;
+      padding: 0.75rem 1.5rem;
+      border-radius: 2rem;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s, transform 0.3s;
+    }
+    .button:hover {
+      background: #FF6B6B;
+      color: #fff;
+      transform: scale(1.05);
+    }
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 1s ease-out;
+    }
+    .hero.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .hero img {
+      max-width: 100%;
+      height: auto;
+    }
+    ul li {
+      margin: 0.5rem 0;
+    }
+    section img {
+      border-radius: 1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      opacity: 0;
+      transform: scale(0.9);
+      transition: all 0.8s ease-out;
+    }
+    section img.show {
+      opacity: 1;
+      transform: scale(1);
+    }
+    blockquote {
+      background: rgba(255,255,255,0.1);
+      padding: 1rem;
+      border-left: 4px solid #FF6B6B;
+      margin: 1rem 0;
+      border-radius: 0.5rem;
+      font-style: italic;
+      opacity: 0;
+      transform: translateX(-30px);
+      transition: all 0.8s ease-out;
+    }
+    blockquote.show {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .testimonial {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .testimonial img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      opacity: 0;
+      transform: scale(0.8);
+      transition: all 0.8s ease-out;
+    }
+    .testimonial img.show {
+      opacity: 1;
+      transform: scale(1);
+    }
+  </style>
 </head>
 <body>
-  Welcome to sucrum-guild web page!
+  <header class="hero">
+    <div>
+      <h1>Scrum Guild コミュニティ</h1>
+      <p>スクラムを楽しみ、つながり、成長する仲間のための場所</p>
+      <a href="https://scrum-guild.connpass.com/" class="button">参加する</a>
+    </div>
+    <div>
+      <img src="assets/undraw_team-collaboration_phnf.svg" alt="チームワーク">
+    </div>
+  </header>
+
+  <section>
+    <h2><i class="fas fa-tasks"></i> 主な活動内容</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center;">
+      <div>
+        <ul>
+          <li><i class="fas fa-chalkboard-teacher"></i> 週に１回のオンラインお喋り会</li>
+          <li><i class="fas fa-users"></i> 年に２回のミートアップ（LT会）</li>
+          <li><i class="fas fa-beer"></i> （できれば）月に１度のHUB会</li>
+        </ul>
+      </div>
+      <div>
+        <img src="assets/undraw_online-discussion_dmws.svg" alt="ワークショップ" class="animate">
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><i class="fas fa-comment-dots"></i> 参加者の声</h2>
+    <div class="testimonial">
+      <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="参加者A" class="animate">
+      <blockquote class="animate">
+        <i class="fas fa-quote-left"></i> ABIによるスクラムアライアンス認定資格研修を修了して、このコミュニティに参加したことは、人生の転機でした。
+      </blockquote>
+    </div>
+    <div class="testimonial">
+      <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="参加者B" class="animate">
+      <blockquote class="animate">
+        <i class="fas fa-quote-left"></i> 仲間と一緒にスクラムを実践できることが楽しく、毎回新しい発見があります。
+      </blockquote>
+    </div>
+  </section>
+
+  <section>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center;">
+      <div>
+        <p>
+          このコミュニティはアジャイルビジネスインスティテュート株式会社（以下、ABI社）による
+          スクラムアライアンス認定資格研修を修了した人たちのコミュニティです。
+        </p>
+        <p>
+          スクラムは開発者の幸福を追求するゲームです。日々の悩みや課題を共有し、解決策を一緒に見つけましょう。
+        </p>
+        <p>
+          Let's make the happy future together!!
+        </p>
+      </div>
+    </div>
+  </section>
+
+<script>
+    // Intersection Observerでスクロール時に要素を表示
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('show');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('.hero, section img, blockquote, .testimonial img').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
 </body>
 </html>
